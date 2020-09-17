@@ -1,5 +1,5 @@
 //Connection Dependency
-let connection = require('./connection');
+const connection = require('./connection');
 
 ////////////////
 // update seed.sql to have boolean values for devoured not null 
@@ -37,10 +37,10 @@ function objToSql(ob) {
 orm = {
     //All Burgers
     //these will be called in burger.js
-    selectAll: function (table) {
+    selectAll: function (table, cols, valOfCol) {
         return new Promise((resolve, reject) => {
             let queryString = "SELECT * FROM " + table + ";";
-            connection.query(queryString, function (err, result) {
+            connection.query(queryString, [table, cols, valOfCol], function (err, result) {
                 if (err) reject(err);
                 resolve(result);
                 //////////////////
@@ -51,23 +51,22 @@ orm = {
     },
     //Create Burger
     insertOne: function (table, cols, valOfCol, cb) {
-        let queryString = "INSERT INTO " + table;
-        queryString += " (";
-        queryString += cols.toString();
-        queryString += ") ";
-        queryString += "VALUES (";
-        queryString += printQuestionMarks(valOfCol.length);
-        queryString += ") ";
-        //////////////////////////
-        console.log("insertOne queryString here:" + queryString);
-        /////////////////////////
-        connection.query(queryString, valOfCol, function (err, result) {
-            if (err) {
-                throw err;
-            }
-
-            cb(result);
-        });
+        return new Promise((resolve, reject) => {
+            let queryString = "INSERT INTO " + table;
+            queryString += " (";
+            queryString += cols.toString();
+            queryString += ") ";
+            queryString += "VALUES (";
+            queryString += printQuestionMarks(valOfCol.length);
+            queryString += ") ";
+            connection.query(queryString, function (err, result) {
+                if (err) reject(err);
+                resolve(result);
+                //////////////////
+                console.log("insertOne queryString here :" + result);
+                /////////////////
+            });
+        })
     },
     //Update Burger
     updateOne: function (table, objColVals, condition, cb) {
@@ -83,7 +82,6 @@ orm = {
             if (err) {
                 throw err;
             }
-
             cb(result);
         });
     },
