@@ -1,9 +1,12 @@
 const express = require('express');
-const burger = require('../models/burger');
+const burger = require('../models/burgers');
+const router = express.Router();
 
-// 3. Inside the `burgers_controller.js` file, import the following:
-// ​
-//    * Express
-//    * `burger.js`
-// ​
-// 4. Create the `router` for the app, and export the `router` at the end of your file.
+router.get("/", async function(req, res) {
+  const hbsObject = { burgers: await burger.selectAll() };
+  console.log(hbsObject);
+  res.render("index", hbsObject);
+});
+
+// Export routes for server.js to use.
+module.exports = router;
