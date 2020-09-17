@@ -1,45 +1,28 @@
 //Connection Dependency
 let connection = require('./connection');
 
-// * In the `orm.js` file, create the methods
-//that will execute the necessary MySQL commands
-//in the controllers. These are the methods you
-//will need to use in order to retrieve and store
-//data in your database.
-// ​
-//      * `selectAll()`
-//      * `insertOne()`
-//      * `updateOne()`
-//      * `deleteOne()`
+////////////////
+// update seed.sql to have boolean values for devoured not null 
+//////////////////
 
 //object of mySQL functions
 orm = {
-    //Read All Burgers
+    //All Burgers
     //these will be called in burger.js
-    selectAll: function (table, col, valOfCol) {
+    selectAll: function (table) {
         return new Promise((resolve, reject) => {
-            let queryString = "SELECT * FROM ?? ;";
-            connection.query(queryString, [table, col, valOfCol], function (err, result) {
+            let queryString = "SELECT * FROM " + table + ";";
+            connection.query(queryString, function (err, result) {
                 if (err) reject(err);
                 resolve(result);
                 //////////////////
-                console.log(result);
+                console.log("selectAll" + result);
                 /////////////////
             });
         });
     },
     //Create Burger
-//     insertOne: function () {
-//         let queryString = "";
-//     },
-//     //Update Burger
-//     updateOne: function () {
-//         let queryString = "";
-//     },
-//     //Delete Burger
-//     deleteOne: function () {
-//         let queryString = "";
-//     }
+
 };
 
 // Export the orm object for the model
