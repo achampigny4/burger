@@ -1,5 +1,7 @@
+//Dependencies
 const express = require("express");
 const exphbs = require("express-handlebars");
+const routes = require("./controllers/burgers_controller");
 
 const PORT = process.env.PORT || 8080;
 
@@ -12,8 +14,12 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//Handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+//Server access to routes
+app.use(routes);
 
 // Start our server
 app.listen(PORT, function() {
