@@ -11,7 +11,7 @@ router.get("/", async function(req, res) {
 
 router.post("/api/burgers", async function(req, res) {
     try {
-      const result = await burger.insertOne(
+      const result = await burger.createOne(
         [
           "burger_name", "devoured"
         ],
