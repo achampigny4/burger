@@ -1,45 +1,70 @@
-{{!-- * Setup the `index.handlebars` to have the template that Handlebars can render onto. --}}
-
-{{!-- * Create a button in `index.handlebars` that will submit the user input into the database. --}}
-
-{{!-- basic html to start will be updated to have two tables side by side --}}
-<h1>Burgers!</h1>
-
-<h2>Burgers that are not devoured!</h2>
-
-<ul>
-     {{#each burgers}}
-     {{#unless devoured}}
-     {{> burgers/burger-block devoured=1}}
-     {{/unless}}
-     {{/each}}
-</ul>
-
-<h2>Burgers that are devoured!</h2>
-
-<ul>
-     {{#each burgers}}
-     {{#if devoured}}
-     {{> burgers/burger-block devoured=0}}
-     {{/if}}
-     {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-     <div class="form-group">
-          <label for="ca">Burger Name:</label>
-          <input type="text" id="ca" name="burger_name">
+<!-- header -->
+<h1>Burgers and Brew</h1>
+<!--Not Devoured and Devoured container-->
+<div class="container">
+     <div class="row justify-content-center">
+          <!--Not Devoured-->
+          <div class="s-col-12 col-lg-5" id="not">
+               <!-- header -->
+               <h2>Burgers Not Devoured!</h2>
+               <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block devoured=1}}
+                    {{/unless}}
+                    {{/each}}
+               </ul>
+               <!--end row for not devoured-->
+          </div>
+          <!--Devoured-->
+          <div class="s-col-12 col-lg-5" id="devoured">
+               <!-- header -->
+               <h2>Burgers That Are Devoured!</h2>
+               <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    {{> burgers/burger-block devoured=0}}
+                    {{/if}}
+                    {{/each}}
+               </ul>
+               <!--end row for devoured-->
+          </div>
+          <!--end row for devoured and not-->
      </div>
-
-     <div class="form-group">
-          <label for="devoured">devoured?</label><br>
-          <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-          <input type="radio" name="devoured" value="0"> Not devoured!
+     <!-- end container for devoured and not -->
+</div>
+<div class="section mb-10">
+     <div class="row justify-content-center">
+          <div class="container col-lg-4" id="incatation">
+               <!-- card back ground style -->
+               <!-- header -->
+               <h2>Burger Incataion</h2>
+               <!-- card contents -->
+               <div class="col-md-12">
+                    <div class="form-group">
+                         <label for="ca">Burger Name:</label>
+                         <input type="text" id="ca" name="burger_name">
+                    </div>
+                    <div class="form-group">
+                         <input type="radio" name="devoured" value="1" checked> Devoured!
+                         <input type="radio" name="devoured" value="0"> Not Devoured!
+                    </div>
+                    <button type="submit">Complete Incataion<i class="fas fa-magic"></i></button>
+                    {{!-- <button type="submit">Devour it!</button>
+                              <button type="submit">Remove Burger</button> --}}
+                    <!-- col-md-12 -->
+               </div>
+          </div>
      </div>
+     <!-- end container -->
+</div>
 
-     <button type="submit">Add Burger</button>
-     <button type="submit">Devour it!</button>
-     <button type="submit">Remove Burger</button>
-</form>
+<!-- blank row below card -->
+<div class="row mb-10" id="empty"></div>
+
+<!-- Sticky Footer -->
+<nav class="footer bg-dark navbar fixed-bottom">
+     <div class="mx-auto">
+          <p class="text-white">© 2020 Alissa Champigny</p>
+     </div>
+</nav>
