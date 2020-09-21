@@ -1,26 +1,26 @@
-# Eat da Burger
+# Burgers and Brew
 
 [![MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat. ​ Whenever a user submits a burger's name, the app will display the burger on the left side of the page -- waiting to be devoured.
+Burgers and Brew is a spooky restaurant app that lets users input the names of burgers they'd like to devour. ​ Whenever a user creates and incatation of a burger's name, the app will display the burger on the left side of the page -- waiting to be devoured.
 
-Each burger in the waiting area also has a Devour it! button. When the user clicks it, the burger will move to the right side of the page.
+Each burger in the waiting area also has a Devour button. When the user clicks it, the burger will move to the right side of the page.
 ​
 Every burger is stored in a database, whether devoured or not.
 ​
 Burgers can be deleted from the database.
 
 
-<img src="" alt="screenshot of application"/>
+<img src="https://raw.githubusercontent.com/achampigny4/burger/master/public/assets/img/screenshot.png" alt="screenshot of application"/>
 
 
 ## Table of Contents
 
 * [Description](##Description)
 
-* [Application links](##Application-links)
+* [Application link](##Application-link)
 
 * [Technologies](##Technologies)
 
@@ -28,31 +28,24 @@ Burgers can be deleted from the database.
 
 * [Contact Developer](##Contact-Developer)
 
-## Application Links
+## Application Link
 
-[Application Deployed on Heroku]()
-
-[Github]()
+[Application Deployed on Heroku](https://burgers-and-brew.herokuapp.com/)
 
 ## Technologies
 
-[MySQL](https://www.mysql.com/), [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [Express-Handlebars](https://www.npmjs.com/package/express-handlebars), [Nodemon](https://www.npmjs.com/package/nodemon), jQuery, Heroku
+[MySQL](https://www.mysql.com/), [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [Express-Handlebars](https://www.npmjs.com/package/express-handlebars), [Nodemon](https://www.npmjs.com/package/nodemon), jQuery, Heroku, CSS, HTML
 
 ## Resources
 
-[mySQL Tutorial](https://www.mysqltutorial.org/getting-started-with-mysql/connect-to-mysql-server/)
 
-Cats App class activity
+Cats App class activity!
 
-[]()
-
-[]()
-
-[]()
+[mySQL Tutorial](https://www.mysqltutorial.org/getting-started-with-mysql/connect-to-mysql-server/), [Font Awesome Icons](https://fontawesome.com/icons?d=gallery&q=witch), [Google Fonts](https://fonts.google.com/)
 
 ## Contact Developer
 
-Eat da Burger was developed by Alissa Champigny
+Burgers and Brew was developed by Alissa Champigny
 
 [Alissa's Portfolio](https://achampigny4.github.io/AlissaC-ResponsivePortfolio/portfolio.html) and [Github Profile](https://github.com/achampigny4)
 
