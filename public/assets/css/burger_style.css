@@ -1,20 +1,56 @@
-li {
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
-  }
-  
-  .form-group {
-    margin-bottom: 5px;
-  }
-  
+body {
+  font-family: 'Marck Script', cursive;
+  background-image: url('https://raw.githubusercontent.com/achampigny4/burger/9000655fa5d8937bb93eb0dce7a8ad53609aaa04/public/assets/img/cauldron.jpg');
+  background-size: cover;
+  color: rgba(0, 0, 0);
+  font-weight: bold;
+}
+
+h1 {
+  padding: 25px;
+  margin: 25px;
+  font-weight: bolder;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 84px;
+}
+
+h2 {
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+#not, #devoured, #incatation {
+  padding: 25px;
+  margin: 25px;
+  text-align: center;
+  font-size: 26px;
+  background-color: rgb(129, 129, 129, 0.4);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-size: 18px;
+  background-color: rgb(129, 129, 129, 0.6);
+  border: 2px solid rgb(0, 0, 0, 0.6);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+button:hover {
+  background-color: rgb(129, 129, 129);
+  border: 2px solid rgb(0, 0, 0);
+}
+
+#empty {
+  padding: 25px;
+  margin: 25px;
+}
+nav.navbar {
+  max-height: 30px;
+  max-width: 100%;
+}
