@@ -1,9 +1,10 @@
 <li>
 	{{burger_name}}
-
+	<br>
 	<button class="change-devoured" data-id="{{id}}" data-newDevoured="{{devoured}}">
-		{{#if devoured}}Devoured!{{else}}Eat?{{/if}}
+		{{#if devoured}}Devour{{else}}Undevour{{/if}}
+		<i class="fas fa-magic"></i>
 	</button>
 
-	<button class="delete-burger" data-id="{{this.id}}">Delete Burger!</button>
+	<button class="delete-burger" data-id="{{this.id}}">Delete Burger!<i class="fas fa-broom"></i></button>
 </li>
